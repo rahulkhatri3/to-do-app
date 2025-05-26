@@ -3,12 +3,13 @@ import { createRoot } from "react-dom/client";
 // import { App } from "./App";
 
 import App from "./App";
+import TodoList from "./App";
 
 const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <App />
+    <TodoList />
   </StrictMode>
 );

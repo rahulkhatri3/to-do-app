@@ -2,3 +2,34 @@
   font-family: sans-serif;
   text-align: center;
 }
+
+.StrikeThrough {
+  text-decoration: line-through;
+  padding: 5px;
+  margin: 20px;
+}
+.input {
+  padding: 5px;
+  margin: 15px;
+}
+.add {
+  margin: 15px;
+  padding: 5px;
+}
+.delete {
+  padding: 2px;
+  margin: 5px;
+}
+.unorder-list {
+  word-spacing: 2px;
+  text-transform: capitalize;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h1 {
+  background-color: brown;
+  color: white;
+}

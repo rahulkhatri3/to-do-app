@@ -32,34 +32,43 @@ function TodoList() {
   };
 
   const deleteTodo = (id) => {
-    setTodoList(todoList.filter((t) => t.td !== id));
+    setTodoList(todoList.filter((t) => t.id !== id));
   };
 
   return (
     <div className="to-do">
+      <h1>To Do</h1>
       <input
+        className="input"
         type="text"
         placeholder="Enter Todo"
         value={input}
         onChange={(e) => setInput(e.target.value)}
       />
 
-      <button onClick={() => addTodoItem()}>Add</button>
-
-      <ul>
-        {TodoList.map((t) => (
-          <li key={t.id}>
-            <input
-              type="checkbox"
-              checked={t.completed}
-              onChange={() => toggleCompleted(t.id)}
-            />
-            <span className={t.completed ? "StrikeThrough" : ""}>{t.text}</span>
-            <button onClick={() => deleteTodo(t.id)}>Delete</button>
-          </li>
-        ))}
-      </ul>
+      <button className="add" onClick={() => addTodoItem()}>
+        Add
+      </button>
+      <div className="unorder-list">
+        <ul>
+          {todoList.map((t) => (
+            <li key={t.id}>
+              <input
+                type="checkbox"
+                checked={t.completed}
+                onChange={() => toggleCompleted(t.id)}
+              />
+              <span className={t.completed ? "StrikeThrough" : ""}>
+                {t.text}
+              </span>
+              <button className="delete" onClick={() => deleteTodo(t.id)}>
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
-export default App;
+export default TodoList;
